@@ -23,6 +23,7 @@ $btns.forEach((el) => {
       let val = "";
       let numbers = [];
       let operators = [];
+      // console.log(expression);
       for (let i = 0; i < expression.length; i++) {
         if (
           expression[i] !== "+" &&
@@ -71,13 +72,12 @@ $btns.forEach((el) => {
           }
         }
       }
-      let index = "";
-      tempValue = "";
+
       let isAllNumber = 0;
-      let ban2 = true;
+      let ban = true;
 
       for (let i = 0; i < expression.length; i++) {
-        if (ban2) {
+        if (ban) {
           if (expression[i - 1] === "+" || expression[i - 1] === undefined) {
             expression.push(Number(expression[i]));
 
@@ -103,7 +103,7 @@ $btns.forEach((el) => {
           }
         }
         if (isAllNumber === expression.length) {
-          ban2 = false;
+          ban = false;
         } else {
           isAllNumber = 0;
         }
@@ -112,7 +112,12 @@ $btns.forEach((el) => {
       for (let k = 0; k < expression.length; k++) {
         result += expression[k];
       }
-      $inputNumber.value = result;
+
+      if (result === Infinity || result === NaN) {
+        $inputNumber.value = "Error";
+      } else {
+        $inputNumber.value = result;
+      }
     }
   });
 });
