@@ -48,7 +48,15 @@ body {
   font-family: "Spartan", sans-serif;
   margin: 0;
   font-weight: 700;
+}
+.default-theme-body {
   background-color: var(--Desaturated-dark-blue-key-background);
+}
+.theme2-body {
+  background-color: var(--Light-gray-main-background);
+}
+.theme3-body {
+  background-color: var(--Very-dark-violet-main-background);
 }
 main {
   width: 90%;
@@ -61,8 +69,14 @@ main {
   justify-content: space-between;
   align-items: center;
 }
-h1 {
+.default-theme-h1 {
   color: var(--White);
+}
+.theme2-h1 {
+  color: var(--Very-dark-grayish-yellow);
+}
+.theme3-h1 {
+  color: var(--Light-yellow);
 }
 .theme-switch-container {
   margin-top: 1rem;
@@ -71,27 +85,35 @@ h1 {
   align-items: center;
   gap: 1rem;
 }
-.theme-text {
+.default-theme-text {
   color: var(--White);
+}
+.theme2-text {
+  color: var(--Very-dark-grayish-yellow);
+}
+.theme3-text {
+  color: var(--Light-yellow);
 }
 .switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 20px;
-  background-color: var(--Desaturated-dark-blue-key-shadow);
   border-radius: 2rem;
   cursor: pointer;
 }
-.number-theme-container {
-  position: absolute;
-  top: -1.1rem;
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  color: var(--White);
-  font-size: 0.8rem;
+.default-switch-theme {
+  background-color: var(--Desaturated-dark-blue-key-shadow);
 }
+.theme2-switch-theme {
+  background-color: var(--Grayish-red-toggle-background-keypad-background);
+}
+.theme3-switch-theme {
+  background-color: var(
+    --Very-dark-violet-toggle-background-keypad-background-screen-background
+  );
+}
+
 .slider {
   position: absolute;
   transition: 0.4s;
@@ -101,20 +123,43 @@ h1 {
   bottom: 3px;
   transition: 0.4s;
   border-radius: 50%;
+}
+.default-slider {
   background-color: var(--Red-key-background-toggle);
 }
-.slider.is.one {
+.theme2-slider {
+  background-color: var(--Orange-key-background-toggle);
+}
+.theme3-slider {
+  background-color: var(--Pure-cyan-key-background-toggle);
+}
+.slider.is-default {
   transform: translateX(0);
 }
-.slider.is-two {
+.slider.is-theme2 {
   transform: translateX(18px);
 }
-.slider.is-three {
+.slider.is-theme3 {
   transform: translateX(38px);
 }
-
+.number-theme-container {
+  position: absolute;
+  top: -1.1rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  font-size: 0.8rem;
+}
+.default-number-theme-container {
+  color: var(--White);
+}
+.theme2-number-theme-container {
+  color: var(--Very-dark-grayish-yellow);
+}
+.theme3-number-theme-container {
+  color: var(--Light-yellow);
+}
 .input-numbers {
-  background-color: var(--Desaturated-dark-blue-key-shadow);
   margin-bottom: 1rem;
   width: 100%;
   box-sizing: border-box;
@@ -123,19 +168,41 @@ h1 {
   font-size: 2rem;
   padding: 1rem;
   text-align: right;
-  color: var(--White);
   font-weight: 700;
   outline: none;
 }
-
-.keyboards-container {
+.default-input-numbers {
   background-color: var(--Desaturated-dark-blue-key-shadow);
+  color: var(--White);
+}
+.theme2-input-numbers {
+  background-color: var(--Very-light-gray-screen-background);
+  color: var(--Very-dark-grayish-yellow);
+}
+.theme3-input-numbers {
+  background-color: var(
+    --Very-dark-violet-toggle-background-keypad-background-screen-background
+  );
+  color: var(--Light-yellow);
+}
+.keys-container {
   padding: 1rem;
   border-radius: 0.5rem;
   display: grid;
   gap: 0.6rem;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
+}
+.default-keys-container {
+  background-color: var(--Desaturated-dark-blue-key-shadow);
+}
+.theme2-keys-container {
+  background-color: var(--Grayish-red-toggle-background-keypad-background);
+}
+.theme3-keys-container {
+  background-color: var(
+    --Very-dark-violet-toggle-background-keypad-background-screen-background
+  );
 }
 .btn {
   border: none;
@@ -156,17 +223,81 @@ h1 {
 .btn:nth-child(14),
 .btn:nth-child(15) {
   font-size: 2rem;
+}
+.default-btn:nth-child(1),
+.default-btn:nth-child(2),
+.default-btn:nth-child(3),
+.default-btn:nth-child(5),
+.default-btn:nth-child(6),
+.default-btn:nth-child(7),
+.default-btn:nth-child(9),
+.default-btn:nth-child(10),
+.default-btn:nth-child(11),
+.default-btn:nth-child(13),
+.default-btn:nth-child(14),
+.default-btn:nth-child(15) {
   color: var(--Very-dark-grayish-blue);
 }
+.theme2-btn:nth-child(1),
+.theme2-btn:nth-child(2),
+.theme2-btn:nth-child(3),
+.theme2-btn:nth-child(5),
+.theme2-btn:nth-child(6),
+.theme2-btn:nth-child(7),
+.theme2-btn:nth-child(9),
+.theme2-btn:nth-child(10),
+.theme2-btn:nth-child(11),
+.theme2-btn:nth-child(13),
+.theme2-btn:nth-child(14),
+.theme2-btn:nth-child(15) {
+  color: var(--Very-dark-grayish-yellow);
+  background-color: var(--Light-grayish-yellow-key-background);
+}
+.theme3-btn:nth-child(1),
+.theme3-btn:nth-child(2),
+.theme3-btn:nth-child(3),
+.theme3-btn:nth-child(5),
+.theme3-btn:nth-child(6),
+.theme3-btn:nth-child(7),
+.theme3-btn:nth-child(9),
+.theme3-btn:nth-child(10),
+.theme3-btn:nth-child(11),
+.theme3-btn:nth-child(13),
+.theme3-btn:nth-child(14),
+.theme3-btn:nth-child(15) {
+  color: var(--Light-yellow);
+  background-color: var(--Very-dark-violet-key-background);
+}
+
 .btn:nth-child(17) {
   grid-column: 1/3;
+}
+.default-btn:nth-child(17) {
   color: var(--Light-grayish-orange-key-background);
   background-color: var(--Desaturated-dark-blue-key-background);
 }
+.theme2-btn:nth-child(17) {
+  color: var(--Light-grayish-yellow-key-background);
+  background-color: var(--Dark-moderate-cyan-key-background);
+}
+.theme3-btn:nth-child(17) {
+  color: var(--White);
+  background-color: var(--Dark-violet-key-background);
+}
 .btn:nth-child(18) {
   grid-column: 3/5;
+}
+.default-btn:nth-child(18) {
   background-color: var(--Red-key-background-toggle);
   color: var(--White);
+}
+.theme2-btn:nth-child(18) {
+  background-color: var(--Orange-key-background-toggle);
+  color: var(--Light-grayish-yellow-key-background);
+}
+.theme3-btn:nth-child(18) {
+  background-color: var(--Pure-cyan-key-background-toggle);
+  color: var(--Dark-violet-key-background);
 }
 .btn:nth-child(4),
 .btn:nth-child(17),
@@ -177,27 +308,78 @@ h1 {
 .btn:nth-child(12),
 .btn:nth-child(16) {
   font-size: 1.3rem;
+}
+.default-btn:nth-child(8),
+.default-btn:nth-child(12),
+.default-btn:nth-child(16) {
   color: var(--Very-dark-grayish-blue);
 }
-.btn:nth-child(4) {
+.theme2-btn:nth-child(8),
+.theme2-btn:nth-child(12),
+.theme2-btn:nth-child(16) {
+  color: var(--Very-dark-grayish-yellow);
+}
+.theme3-btn:nth-child(8),
+.theme3-btn:nth-child(12),
+.theme3-btn:nth-child(16) {
+  color: var(--Light-yellow);
+  background-color: var(--Very-dark-violet-key-background);
+}
+.default-btn:nth-child(4) {
   color: var(--Light-grayish-orange-key-background);
   background-color: var(--Desaturated-dark-blue-key-background);
 }
+.theme2-btn:nth-child(4) {
+  color: var(--Light-grayish-yellow-key-background);
+  background-color: var(--Dark-moderate-cyan-key-background);
+}
+.theme3-btn:nth-child(4) {
+  color: var(--White);
+  background-color: var(--Dark-violet-key-background);
+}
 
-/* Shadows */
-.btn {
+/* Default Shadows */
+.default-btn {
   box-shadow: 0px -2px 5px -1px var(--Very-dark-grayish-blue) inset;
 }
-.btn:nth-child(18) {
+.theme2-btn {
+  box-shadow: 0px -2px 5px -1px var(--Dark-grayish-orange-key-shadow) inset;
+}
+.theme3-btn {
+  box-shadow: 0px -2px 5px -1px var(--Vivid-magenta-key-shadow) inset;
+}
+.default-btn:nth-child(18) {
   box-shadow: 0px -2px 5px -1px var(--Dark-red-key-shadow) inset;
+}
+.theme2-btn:nth-child(18) {
+  box-shadow: 0px -2px 5px -1px var(--DarkOrange-key-shadow) inset;
+}
+.theme3-btn:nth-child(18) {
+  box-shadow: 0px -2px 5px -1px var(--Soft-cyan-key-shadow) inset;
+}
+.default-attribution {
+  font-size: 11px;
+  text-align: center;
 }
 .attribution {
   font-size: 11px;
   text-align: center;
 }
+.theme2-attribution {
+  color: var(--Very-dark-grayish-yellow);
+}
+.theme3-attribution {
+  color: var(--Very-dark-violet-key-background);
+}
 
-.attribution a {
+.default-attribution-link {
   color: var(--White);
+}
+.theme2-attribution-link {
+  color: var(--Orange-key-background-toggle);
+}
+.theme3-attribution-link {
+  color: var(--Light-yellow);
 }
 @media screen and (min-width: 768px) {
   body {
