@@ -48,6 +48,11 @@ body {
   font-family: "Spartan", sans-serif;
   margin: 0;
   font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  gap: 1.5rem;
 }
 .default-theme-body {
   background-color: var(--Desaturated-dark-blue-key-background);
@@ -149,7 +154,9 @@ main {
   width: 100%;
   justify-content: space-around;
   font-size: 0.8rem;
+  height: 34px;
 }
+
 .default-number-theme-container {
   color: var(--White);
 }
@@ -381,6 +388,7 @@ main {
 .theme3-attribution-link {
   color: var(--Light-yellow);
 }
+
 @media screen and (min-width: 768px) {
   body {
     display: flex;
